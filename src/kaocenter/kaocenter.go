@@ -1129,7 +1129,8 @@ func Template_Cancel_Request(c *gin.Context) {
 		return
 	}
 
-	user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	//user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	user := CenterUser{BizId: param.BizId, ApiKey: param.ApiKey}
 	if !CheckCenterUser(user) {
 		c.JSON(http.StatusForbidden, "접근 권한이 없습니다.")
 		return
@@ -1331,7 +1332,8 @@ func Template_Stop(c *gin.Context) {
 		return
 	}
 
-	user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	//user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	user := CenterUser{BizId: param.BizId, ApiKey: param.ApiKey}
 	if !CheckCenterUser(user) {
 		c.JSON(http.StatusForbidden, "접근 권한이 없습니다.")
 		return
@@ -1368,7 +1370,8 @@ func Template_Reuse(c *gin.Context) {
 		return
 	}
 
-	user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	//user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	user := CenterUser{BizId: param.BizId, ApiKey: param.ApiKey}
 	if !CheckCenterUser(user) {
 		c.JSON(http.StatusForbidden, "접근 권한이 없습니다.")
 		return
@@ -1405,7 +1408,8 @@ func Template_CA(c *gin.Context) {
 		return
 	}
 
-	user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	//user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	user := CenterUser{BizId: param.BizId, ApiKey: param.ApiKey}
 	if !CheckCenterUser(user) {
 		c.JSON(http.StatusForbidden, "접근 권한이 없습니다.")
 		return
@@ -1563,7 +1567,8 @@ func Template_Category_all(c *gin.Context) {
 		return
 	}
 
-	user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	//user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	user := CenterUser{BizId: param.BizId, ApiKey: param.ApiKey}
 	if !CheckCenterUser(user) {
 		c.JSON(http.StatusForbidden, "접근 권한이 없습니다.")
 		return
@@ -1655,7 +1660,8 @@ func Template_Dormant_Release(c *gin.Context) {
 		return
 	}
 
-	user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	//user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	user := CenterUser{BizId: param.BizId, ApiKey: param.ApiKey}
 	if !CheckCenterUser(user) {
 		c.JSON(http.StatusForbidden, "접근 권한이 없습니다.")
 		return
@@ -1692,7 +1698,8 @@ func Template_Convert_AC(c *gin.Context) {
 		return
 	}
 
-	user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	//user := CenterUser{BizId: param.BizId, ApiKey: param.Message}
+	user := CenterUser{BizId: param.BizId, ApiKey: param.ApiKey}
 	if !CheckCenterUser(user) {
 		c.JSON(http.StatusForbidden, "접근 권한이 없습니다.")
 		return
