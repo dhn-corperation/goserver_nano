@@ -11,26 +11,26 @@ type SenderDelete struct {
 }
 
 type TemplateCreate struct {
-	SenderKey             string       				`json:"senderKey" binding:"required"`
-	TemplateCode          string       				`json:"templateCode" binding:"required"`
-	TemplateName          string       				`json:"templateName" binding:"required"`
-	TemplateMessageType   string       				`json:"templateMessageType" binding:"required"`
-	TemplateEmphasizeType string       				`json:"templateEmphasizeType" binding:"required"`
-	TemplateContent       string       				`json:"templateContent" binding:"required"`
-	TemplateExtra         string       				`json:"templateExtra,omitempty"`
-	TemplateAd            string       				`json:"templateAd,omitempty"`
-    TemplateImageName     string       				`json:"templateImageName,omitempty"`
-    TemplateImageUrl      string      				`json:"templateImageUrl,omitempty"`
-	TemplateTitle         string       				`json:"templateTitle,omitempty"`
-	TemplateSubtitle      string       				`json:"templateSubtitle,omitempty"`
-	TemplateHeader        string                  	`json:"templateHeader,omitempty"`
-	TemplateItemHighlight TemplateItemHighlights  	`json:"templateItemHighlight,omitempty"`
-	TemplateItem          TemplateItems           	`json:"templateItem,omitempty"`
-	SenderKeyType         string       				`json:"senderKeyType,omitempty"`
-	CategoryCode          string       				`json:"categoryCode,omitempty"`
-	SecurityFlag          bool         				`json:"securityFlag,omitempty"`
-	Buttons               []Button     				`json:"buttons,omitempty"`
-	QuickReplies          []Quickreply 				`json:"quickReplies,omitempty"`
+	SenderKey             string                 `json:"senderKey" binding:"required"`
+	TemplateCode          string                 `json:"templateCode" binding:"required"`
+	TemplateName          string                 `json:"templateName" binding:"required"`
+	TemplateMessageType   string                 `json:"templateMessageType" binding:"required"`
+	TemplateEmphasizeType string                 `json:"templateEmphasizeType" binding:"required"`
+	TemplateContent       string                 `json:"templateContent" binding:"required"`
+	TemplateExtra         string                 `json:"templateExtra,omitempty"`
+	TemplateAd            string                 `json:"templateAd,omitempty"`
+	TemplateImageName     string                 `json:"templateImageName,omitempty"`
+	TemplateImageUrl      string                 `json:"templateImageUrl,omitempty"`
+	TemplateTitle         string                 `json:"templateTitle,omitempty"`
+	TemplateSubtitle      string                 `json:"templateSubtitle,omitempty"`
+	TemplateHeader        string                 `json:"templateHeader,omitempty"`
+	TemplateItemHighlight TemplateItemHighlights `json:"templateItemHighlight,omitempty"`
+	TemplateItem          TemplateItems          `json:"templateItem,omitempty"`
+	SenderKeyType         string                 `json:"senderKeyType,omitempty"`
+	CategoryCode          string                 `json:"categoryCode,omitempty"`
+	SecurityFlag          bool                   `json:"securityFlag,omitempty"`
+	Buttons               []Button               `json:"buttons,omitempty"`
+	QuickReplies          []Quickreply           `json:"quickReplies,omitempty"`
 }
 
 type Button struct {
@@ -81,21 +81,20 @@ type TemplateUpdate struct {
 }
 
 type TemplateItemHighlights struct {
-	title             string       `json:"title,omitempty"`
-	description       string       `json:"description,omitempty"`
-	imageUrl          string       `json:"imageUrl,omitempty"`
+	title       string `json:"title,omitempty"`
+	description string `json:"description,omitempty"`
+	imageUrl    string `json:"imageUrl,omitempty"`
 }
 
 type TemplateItems struct {
-	List          []TemplateItemList       `json:"list,omitempty"`
-	Summary       []TemplateItemList       `json:"summary,omitempty"`
+	List    []TemplateItemList `json:"list,omitempty"`
+	Summary []TemplateItemList `json:"summary,omitempty"`
 }
 
 type TemplateItemList struct {
-	Title             string       `json:"title,omitempty"`
-	Description       string       `json:"description,omitempty"`
+	Title       string `json:"title,omitempty"`
+	Description string `json:"description,omitempty"`
 }
-
 
 type TemplateComment struct {
 	SenderKey     string `json:"senderKey" binding:"required"`
@@ -128,6 +127,10 @@ type ChannelSenders struct {
 
 type ChannelDelete struct {
 	ChannelKey string `json:"groupKey" binding:"required"`
+}
+
+type PluginCallbacnUrlList struct {
+	SenderKey string `json:"senderKey" binding:"required"`
 }
 
 type PluginCallbackUrlCreate struct {

@@ -199,7 +199,7 @@ func resultProc() {
 
 	r.POST("/channel/delete", kaocenter.Channel_Delete_)
 
-	r.GET("/plugin/callbackUrl/list", kaocenter.Plugin_CallbackUrls_List)
+	r.POST("/plugin/callbackUrl/list", kaocenter.Plugin_CallbackUrls_List)
 
 	r.POST("/plugin/callbackUrl/create", kaocenter.Plugin_callbackUrl_Create)
 

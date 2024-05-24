@@ -2133,9 +2133,14 @@ func Channel_Delete_(c *gin.Context) {
 func Plugin_CallbackUrls_List(c *gin.Context) {
 	conf := config.Conf
 
-	senderKey := c.Query("senderKey")
+	param := &PluginCallbacnUrlList{}
+	err := c.Bind(param)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, err.Error())
+		return
+	}
 
-	req, err := http.NewRequest("GET", conf.CENTER_SERVER+"api/v2/"+conf.PROFILE_KEY+"/plugin/callbackUrl/list?senderKey="+senderKey, nil)
+	req, err := http.NewRequest("GET", conf.CENTER_SERVER+"api/v1/"+conf.PROFILE_KEY+"/plugin/callbackUrl/list?senderKey="+param.SenderKey, nil)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 		return
@@ -2161,7 +2166,7 @@ func Plugin_callbackUrl_Create(c *gin.Context) {
 	}
 	jsonstr, _ := json.Marshal(param)
 	buff := bytes.NewBuffer(jsonstr)
-	req, err := http.NewRequest("POST", conf.CENTER_SERVER+"api/v2/"+conf.PROFILE_KEY+"/plugin/callbackUrl/create", buff)
+	req, err := http.NewRequest("POST", conf.CENTER_SERVER+"api/v1/"+conf.PROFILE_KEY+"/plugin/callbackUrl/create", buff)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 		return
@@ -2188,7 +2193,7 @@ func Plugin_callbackUrl_Update(c *gin.Context) {
 	}
 	jsonstr, _ := json.Marshal(param)
 	buff := bytes.NewBuffer(jsonstr)
-	req, err := http.NewRequest("POST", conf.CENTER_SERVER+"api/v2/"+conf.PROFILE_KEY+"/plugin/callbackUrl/update", buff)
+	req, err := http.NewRequest("POST", conf.CENTER_SERVER+"api/v1/"+conf.PROFILE_KEY+"/plugin/callbackUrl/update", buff)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 		return
@@ -2215,7 +2220,7 @@ func Plugin_callbackUrl_Delete(c *gin.Context) {
 	}
 	jsonstr, _ := json.Marshal(param)
 	buff := bytes.NewBuffer(jsonstr)
-	req, err := http.NewRequest("POST", conf.CENTER_SERVER+"api/v2/"+conf.PROFILE_KEY+"/plugin/callbackUrl/delete", buff)
+	req, err := http.NewRequest("POST", conf.CENTER_SERVER+"api/v1/"+conf.PROFILE_KEY+"/plugin/callbackUrl/delete", buff)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 		return
