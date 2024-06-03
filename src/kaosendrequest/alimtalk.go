@@ -262,7 +262,11 @@ attachments) values %s`
 		if len(result["response_method"]) > 0 {
 			alimtalk.Response_method = result["response_method"]
 		} else {
-			alimtalk.Response_method = "realtime"
+			if s.ToLower(result["message_type"]) == "AI" {
+				alimtalk.Response_method = "push"
+			} else {
+				alimtalk.Response_method = "realtime"
+			}
 		}
 
 		if s.EqualFold(alimtalk.Response_method, "polling") {
