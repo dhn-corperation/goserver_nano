@@ -313,8 +313,6 @@ attachments) values %s`
 		temp.Result = result
 		reswg.Add(1)
 
-		stdlog.Println("테스트 데이터 (Response_method) : ", alimtalk.Response_method)
-		stdlog.Println("테스트 데이터 : ", alimtalk)
 		go sendKakaoAlimtalk(&reswg, resultChan, alimtalk, temp)
 	}
 
