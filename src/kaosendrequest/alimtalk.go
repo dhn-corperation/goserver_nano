@@ -262,12 +262,14 @@ attachments) values %s`
 		if len(result["response_method"]) > 0 {
 			alimtalk.Response_method = result["response_method"]
 		} else {
-			if s.ToLower(result["message_type"]) == "AI" {
+			if s.ToLower(result["message_type"]) == "ai" {
 				alimtalk.Response_method = "push"
 			} else {
 				alimtalk.Response_method = "realtime"
 			}
 		}
+
+
 
 		if s.EqualFold(alimtalk.Response_method, "polling") {
 			alimtalk.Channel_key = conf.CHANNEL
@@ -310,6 +312,9 @@ attachments) values %s`
 		var temp resultStr
 		temp.Result = result
 		reswg.Add(1)
+
+		stdlog.Println("테스트 데이터 (Response_method) : ", alimtalk.Response_method)
+		stdlog.Println("테스트 데이터 : ", alimtalk)
 		go sendKakaoAlimtalk(&reswg, resultChan, alimtalk, temp)
 	}
 
