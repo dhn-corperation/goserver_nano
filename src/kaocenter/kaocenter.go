@@ -714,8 +714,8 @@ func Template_Create(c *gin.Context) {
 	if !CheckCenterUser(user) {
 		c.JSON(http.StatusForbidden, "접근 권한이 없습니다.")
 	} else {
-		param.ApiKey = ""
-		param.BizId = ""
+		// param.ApiKey = ""
+		// param.BizId = ""
 		jsonstr, _ := json.Marshal(param)
 		//fmt.Println(string(jsonstr))
 		buff := bytes.NewBuffer(jsonstr)
