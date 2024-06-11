@@ -444,8 +444,8 @@ carousel
 					atreqinsValues = append(atreqinsValues, msg[i].Messagetype)
 				}
 
-				atreqinsValues = append(atreqinsValues, msg[i].Msg)
-				atreqinsValues = append(atreqinsValues, msg[i].Msgsms)
+				atreqinsValues = append(atreqinsValues, string(msg[i].Msg))
+				atreqinsValues = append(atreqinsValues, string(msg[i].Msgsms))
 				atreqinsValues = append(atreqinsValues, msg[i].Onlysms)
 				atreqinsValues = append(atreqinsValues, msg[i].Phn)
 				atreqinsValues = append(atreqinsValues, msg[i].Profile)

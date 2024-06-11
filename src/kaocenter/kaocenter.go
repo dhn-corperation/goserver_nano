@@ -934,7 +934,8 @@ func TemplateList(c *gin.Context) {
 from
 	CENTER_TEMPLATE ct
 where
-	ct.senderKey = '` + param.SenderKey + `'`
+	ct.senderKey = '` + param.SenderKey + `'
+and ct.bizId = '` + param.BizId + `'`
 
 	if len(param.SenderKeyType) > 0 {
 		tmpstr = tmpstr + ` and ct.senderKeyType = '` + param.SenderKeyType + `'`

@@ -143,6 +143,7 @@ func errCode() {
 	ErrCode["1024"] = ErrRes{Key: "7111", Value: "삭제 대기 상태의 카카오톡 채널 (카카오톡 채널 운영툴에서 확인)"}
 	ErrCode["1014"] = ErrRes{Key: "7112", Value: "유효하지 않은 사업자번호"}
 	ErrCode["1025"] = ErrRes{Key: "7125", Value: "메시지 차단 상태의 카카오톡 채널 (카카오톡 채널 운영툴에서 확인)"}
+	ErrCode["1030"] = ErrRes{Key: "7130", Value: "잘못된 파라미터 요청"}
 	ErrCode["2003"] = ErrRes{Key: "7203", Value: "친구톡 전송 시 친구대상 아님"}
 	ErrCode["3016"] = ErrRes{Key: "7204", Value: "템플릿 불일치"}
 	ErrCode["2006"] = ErrRes{Key: "7206", Value: "시리얼넘버 형식 불일치"}
